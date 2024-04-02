@@ -45,7 +45,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-${{ runner.node }}-${{ hashFiles('**/pnpm-lock.yaml') }}-nextjs
+          key: ${{ runner.os }}-${{ matrix.node }}-${{ hashFiles('**/pnpm-lock.yaml') }}-nextjs
 
       - name: Setup Prisma
         run: pnpm prebuild
